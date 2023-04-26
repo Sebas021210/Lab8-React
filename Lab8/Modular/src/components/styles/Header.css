@@ -1,0 +1,20 @@
+header{
+    height: 70px;
+    background-color: #14213d;
+    display: flex;
+    justify-content: space-between;
+}
+
+#titulo{
+    font-size: 35px;
+    color: #ffffff;
+    text-align: left;
+    padding: 15px;
+}
+
+#intentos{
+    font-size: 20px;
+    color: #ffffff;
+    text-align: right;
+    padding: 25px; 
+}

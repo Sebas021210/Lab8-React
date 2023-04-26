@@ -1,0 +1,15 @@
+.card{
+    width: 210px;
+    height: 150px;
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: scale(0.97);
+}
+
+.card-image {
+    max-width: 60%;
+    max-height: 100%;
+}
+  
