@@ -4,6 +4,10 @@ import java from './imagenes/java.png';
 import js from './imagenes/js.png';
 import sql from './imagenes/postgresql.png';
 import py from './imagenes/py.png';
+import angular from './imagenes/angular.png';
+import cs from './imagenes/c#.png';
+import react from './imagenes/react.png';
+import html from './imagenes/html.png';
 
 const images = [
   {
@@ -66,7 +70,26 @@ const images = [
     id: 12,
     lenguaje: 'python'
   },
-
+  {
+    src: react,
+    id: 13,
+    lenguaje: 'react'
+  },
+  {
+    src: react,
+    id: 15,
+    lenguaje: 'react'
+  },
+  {
+    src: html,
+    id: 15,
+    lenguaje: 'html'
+  },
+  {
+    src: html,
+    id: 16,
+    lenguaje: 'html'
+  },
 ];
 
 export { images } 
