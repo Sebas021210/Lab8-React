@@ -1,8 +1,12 @@
-.card{
+.card {
+    position: relative;
     width: 210px;
     height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-}
+  }
 
 .card:hover{
     transform: scale(0.97);
@@ -11,4 +15,7 @@
 .card-image {
     max-width: 60%;
     max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
