@@ -28,9 +28,7 @@ export default class Tablero extends Component {
     }));
 
     const cartasDuplicadas = cartas.concat(cartas);
-
     const cartasMezcladas = this.shuffleArray(cartasDuplicadas);
-
     this.setState({ cards: cartasMezcladas });
   }
 

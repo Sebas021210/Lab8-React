@@ -15,3 +15,12 @@ class App extends Component{
 }
 
 export default App;
+
+/* 
+POR HACER
+- Solo se puedan voltear dos cartas a la vez
+- Cuando no coincidan voltearse automaticamente
+- Cuando coincidan quedarse fijas y no poder voltearse
+- Contador de intentos
+- Aviso cuando se gano el juego
+*/
