@@ -35,9 +35,17 @@ export default class Tablero extends Component {
   render() {
     return (
       <div id="tablero">
-        {this.state.cards.map((carta) => (
-          <Cartas name={carta.lenguaje} number={carta.id} frontFace={carta.src} />
-        ))}
+        {this.state.cards.map((carta, index) => {
+          const estaSiendoComparada = this.props.parejaSelect.indexOf(carta) > -1;
+          return <Cartas 
+          name={carta.lenguaje} 
+          number={carta.id} 
+          frontFace={carta.src} 
+          estaSiendoComparada={estaSiendoComparada}
+          seleccionarCarta={() => this.props.seleccionarCarta(carta)}
+          fueAdivinada={carta.fueAdivinada}/>
+        }
+        )}
       </div>
     );
   }

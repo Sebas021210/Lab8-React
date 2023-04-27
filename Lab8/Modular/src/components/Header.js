@@ -7,7 +7,7 @@ export default class Header extends Component{
             <header>
                 <div id="titulo">Juego de Memoria</div>
                 <div id="intentos">
-                    Intentos: 
+                    Intentos: {this.props.numIntentos}
                 </div>
             </header>
         );

@@ -18,12 +18,14 @@ export default class Cartas extends Component {
   }
 
   render() {
-    const { name, number, frontFace } = this.props;
+    const { name, number, frontFace, estaSiendoComparada, seleccionarCarta, fueAdivinada } = this.props;
     const { isFlipped } = this.state;
 
     return (
       <div className='card' >
-        <ReactCardFlip isFlipped={isFlipped} >
+        <ReactCardFlip 
+        isFlipped={isFlipped || this.props.estaSiendoComparada || this.props.fueAdivinada} 
+        disabled={true}>
           <img className='card-image' src={backFace} alt='back-face' onClick={this.handleClick}/>
           <img className='card-image' src={frontFace} alt='front-face'onClick={this.handleClick}/>
         </ReactCardFlip>
