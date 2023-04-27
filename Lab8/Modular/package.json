@@ -39,6 +39,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "lodash.shuffle": "^4.2.0",
     "react-card-flip": "^1.2.0"
   }
 }
