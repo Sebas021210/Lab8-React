@@ -5,6 +5,10 @@ import { images } from '../imagenes.js';
 import "./styles/Tablero.css";
 
 export default class Tablero extends Component {
+  constructor(props){
+    super(props);
+  }
+
   state = {
     cards: []
   }
@@ -38,12 +42,12 @@ export default class Tablero extends Component {
         {this.state.cards.map((carta, index) => {
           const estaSiendoComparada = this.props.parejaSelect.indexOf(carta) > -1;
           return <Cartas 
-          name={carta.lenguaje} 
-          number={carta.id} 
-          frontFace={carta.src} 
-          estaSiendoComparada={estaSiendoComparada}
-          seleccionarCarta={() => this.props.seleccionarCarta(carta)}
-          fueAdivinada={carta.fueAdivinada}/>
+            name={carta.lenguaje} 
+            number={carta.id} 
+            frontFace={carta.src} 
+            estaSiendoComparada={estaSiendoComparada}
+            seleccionarCarta={() => this.props.seleccionarCarta(carta)}
+            fueAdivinada={carta.fueAdivinada}/>
         }
         )}
       </div>

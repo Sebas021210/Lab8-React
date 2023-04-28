@@ -4,8 +4,6 @@ import java from './imagenes/java.png';
 import js from './imagenes/js.png';
 import sql from './imagenes/postgresql.png';
 import py from './imagenes/py.png';
-import angular from './imagenes/angular.png';
-import cs from './imagenes/c#.png';
 import react from './imagenes/react.png';
 import html from './imagenes/html.png';
 
@@ -77,7 +75,7 @@ const images = [
   },
   {
     src: react,
-    id: 15,
+    id: 14,
     lenguaje: 'react'
   },
   {

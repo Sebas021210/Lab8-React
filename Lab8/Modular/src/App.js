@@ -6,6 +6,10 @@ import "./App.css";
 const getEstadoInicial = () =>{
     return{
         parejaSelect: [],
+        primeraCarta: [],
+        setprimeraCarta: [],
+        segundaCarta: [],
+        setsegundaCarta: [],
         estaComparando: false,
         numIntentos: 0
     }
@@ -50,41 +54,53 @@ class App extends Component{
         }
     }
     
-    compararPareja(parejaSelect){
-        this.state({estaComparando: true});
-
+    compararPareja(parejaSelect) {
+        this.setState({ estaComparando: true });
+      
         setTimeout(() => {
             const [primeraCarta, segundaCarta] = parejaSelect;
             let baraja = this.state.baraja;
-
-            if (primeraCarta.lenguaje == segundaCarta.lenguaje){
+      
+            if (primeraCarta.lenguaje === segundaCarta.lenguaje) {
+                console.log("Las cartas hacen match");
                 baraja = baraja.map((carta) => {
-                    if (carta.src !== primeraCarta.src){
-                        return carta;
-                    }
-
-                    return {...carta, fueAdivinada: true};
-                })
+                if (carta.lenguaje !== primeraCarta.lenguaje) {
+                    return carta;
+                } 
+                return { ...carta, fueAdivinada: true };
+                });
+      
+                this.verificarSiHayGanador(baraja);
+      
+                this.setState({
+                    parejaSelect: [],
+                    baraja,
+                    estaComparando: false,
+                    numIntentos: this.state.numIntentos + 1,
+                });
+            }else {
+                console.log(parejaSelect);
+                const [primeraCartaIndex, segundaCartaIndex] = [
+                    baraja.findIndex((carta) => carta.id === primeraCarta.id),
+                    baraja.findIndex((carta) => carta.id === segundaCarta.id),
+                ];
+                baraja[primeraCartaIndex].fueAdivinada = false;
+                baraja[segundaCartaIndex].fueAdivinada = false;
+        
+                this.setState({
+                    parejaSelect: [],
+                    baraja: [...baraja],
+                    estaComparando: false,
+                });
             }
-
-            this.verificarGanador(baraja)
-            this.setState({
-                parejaSelect: [],
-                baraja,
-                estaComparando: false,
-                numIntentos: this.state.numIntentos + 1
-            })
-        }, 1000)
+        }, 1000);
     }
+      
+    verificarSiHayGanador(baraja) {
+        if (baraja.filter((carta) => !carta.fueAdivinada).length === 0) {
+            alert("Ganaste");
+        }
+    }      
 }
 
 export default App;
-
-/* 
-POR HACER
-- Solo se puedan voltear dos cartas a la vez
-- Cuando no coincidan voltearse automaticamente
-- Cuando coincidan quedarse fijas y no poder voltearse
-- Contador de intentos
-- Aviso cuando se gano el juego
-*/
